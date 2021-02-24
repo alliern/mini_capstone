@@ -4,4 +4,10 @@ class Api::ProductsController < ApplicationController
     @products = Product.all
     render "all_products.json.jb"
   end
+
+  def first_product 
+    @product = Product.first
+    render "first_product.json.jb"
+  end
+
 end
