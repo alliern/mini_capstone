@@ -5,5 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Product.create(name: "Diddy Kong Racing", price: 3.50, image_url: "https://example.com/DKR.jpg", description: "Diddy Kong Racing game cartridge for the Nintendo 64")
-Product.create(name: "Pokemon Stadium", price: 7.00, image_url: "https://example.com/PKS.jpg", description: "Pokemon Stadium game cartridge for the Nintendo 64")
+Product.new(name: "Diddy Kong Racing", price: 3.50, image_url: "https://example.com/DKR.jpg", description: "Diddy Kong Racing game cartridge for the Nintendo 64")
+Product.save
+Product.new(name: "Pokemon Stadium", price: 7.00, image_url: "https://example.com/PKS.jpg", description: "Pokemon Stadium game cartridge for the Nintendo 64")
+Product.save

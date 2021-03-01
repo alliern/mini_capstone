@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     get "/products" => "products#index"
     get "/first_product_path" => "products#first_product"
     get "/products/:id" => "products#show"
-  end
+    post "/products" => "products#create"
+    patch "/products/:id" => "products#update"
+    end
 end
