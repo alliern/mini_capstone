@@ -1,11 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-Product.new(name: "Diddy Kong Racing", price: 3.50, image_url: "https://example.com/DKR.jpg", description: "Diddy Kong Racing game cartridge for the Nintendo 64")
-Product.save
-Product.new(name: "Pokemon Stadium", price: 7.00, image_url: "https://example.com/PKS.jpg", description: "Pokemon Stadium game cartridge for the Nintendo 64")
-Product.save
+Product.create!([
+  {name: "Cheetos", price: "3.0", image_url: "https://images-na.ssl-images-amazon.com/images/I/91dl7O-wxhL._SL1500_.jpg", description: "crunchy cheese snack", stock: nil},
+  {name: "Pokemon Stadium", price: "35.0", image_url: "https://i.ebayimg.com/images/g/bgQAAOSwBmhgCzMD/s-l1600.jpg", description: "Create a team of your favorite Pokemon and battle your friends! Includes a variety of mini games ", stock: nil},
+  {name: "Mario Party 3", price: "40.0", image_url: "https://cdn.shopify.com/s/files/1/0145/7628/7792/products/VJD07577_1200x.jpg?v=1576018492", description: "Choose your favorite game board and play against your friends or NPCs to win the most stars!", stock: nil},
+  {name: "Diddy Kong Racing", price: "35.0", image_url: "https://cdn.shopify.com/s/files/1/0145/7628/7792/products/VJD07509_1200x.jpg?v=1576016553", description: "Race against your friends and NPCs to cross the finish line first!", stock: nil}
+])
