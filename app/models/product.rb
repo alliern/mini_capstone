@@ -17,4 +17,6 @@ class Product < ApplicationRecord
     total = price + tax
     total
   end
+
+  
 end
