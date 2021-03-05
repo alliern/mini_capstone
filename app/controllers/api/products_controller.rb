@@ -2,7 +2,10 @@ class Api::ProductsController < ApplicationController
 
   def index
     @products = Product.all
+
+    # if params[:search]
     render "index.json.jb"
+
   end
 
   def show
@@ -18,8 +21,13 @@ class Api::ProductsController < ApplicationController
     @product.image_url = params[:image_url]
     @product.description = params[:description]
     @product.stock = params[:stock]
-    @product.save
-  render "show.json.jb"
+    @product.supplier_id = params[:supplier_id]
+
+    if @product.save
+      render "show.json.jb"
+    else
+      render json: {errors: @product.errors.full_messages}, status: 406
+    end
   end
   
   def update
@@ -31,8 +39,12 @@ class Api::ProductsController < ApplicationController
     @product.image_url = params[:image_url] || @product.image_url
     @product.description = params[:description] || @product.description
     @product.stock = params[:stock] || @product.stock
-    @product.save
-    render "show.json.jb"
+    @product.supplier_id = params[:supplier_id] || product.supplier_id
+    if @product.save
+      render "show.json.jb"
+    else
+      render json: {errors: @product.errors.full_messages}, status: 406
+    end
     
   end
 
