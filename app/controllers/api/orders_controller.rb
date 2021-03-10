@@ -10,7 +10,7 @@ class Api::OrdersController < ApplicationController
     # @order.tax = params[:tax]
     # @order.total = params[:total]
     if @order.save
-    render json: "show.json.jb"
+    render "order.json.jb"
     else
       render json: {error: "User must be signed in"}
     end
