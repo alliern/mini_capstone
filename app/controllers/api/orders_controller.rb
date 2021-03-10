@@ -1,5 +1,7 @@
 class Api::OrdersController < ApplicationController
 
+  before_action :authenticate_user
+
   def create
     product = Product.find_by(id: params[:product_id])
 
@@ -24,8 +26,9 @@ class Api::OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.order
+    @orders = current_user.orders
     render "index.json.jb"
+    
   end
 
   def show

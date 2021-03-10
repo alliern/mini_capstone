@@ -1,4 +1,5 @@
 class Api::ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
 
   def index
     #user must be logged in to see data
@@ -23,6 +24,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def create
+    
     @product = Product.new
     @product.name = params[:name]
     @product.price = params[:price]
