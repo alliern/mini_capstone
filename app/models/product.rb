@@ -2,6 +2,9 @@ class Product < ApplicationRecord
   belongs_to :supplier
   has_many :images
   has_many :orders
+  has_many :category_products
+  has_many :categories, through: :category_products
+
   # validates :name, :image_url, :price, :description, :stock, presence: true
   # validates :description, length: {in: 20..500}
   # validates :stock, :price, numericality: {greater_than: 0}

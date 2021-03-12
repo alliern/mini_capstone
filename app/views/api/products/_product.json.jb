@@ -10,4 +10,5 @@
   supplier_id: product.supplier_id,
   supplier_name: product.supplier.name,
   images: product.images,
+  categories: product.categories
   }
