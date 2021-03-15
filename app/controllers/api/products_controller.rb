@@ -10,8 +10,8 @@ class Api::ProductsController < ApplicationController
     #   render json: []
     # end
     if params[:category]
-      #same as Category.find_by(name: params[:category])
-      Category.find_by("name ILIKE ?", "%#{params[:category]}%")
+      same as Category.find_by(name: params[:category])
+      # Category.find_by("name ILIKE ?", "%#{params[:category]}%")
       @products = category.products
     
     # if params[:search]
